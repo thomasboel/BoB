@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { TouchableOpacity } from 'react-native';
 import { colors } from '../util/Theme';
 
 const ButtonContainer = styled.View`
@@ -20,9 +21,9 @@ const ButtonText = styled.Text`
 class Button extends React.Component {
 	render() {
 		return (
-			<ButtonContainer>
-				<ButtonText>{this.props.text}</ButtonText>
-			</ButtonContainer>
+				<ButtonContainer>
+					<ButtonText>{this.props.text}</ButtonText>
+				</ButtonContainer>
 		);
 	}
 }

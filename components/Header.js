@@ -38,7 +38,7 @@ class Arena extends React.Component {
 					}}
 				/>
 				<BoB source={require('../assets/BoB.png')}/>
-				<Title>{this.props.title}</Title>
+				<Title>{this.props.index == 0 ? 'Ballers' : this.props.index == 1 ? 'Arena' : 'Bio'}</Title>
 			</Wrapper>
 		);
 	}
