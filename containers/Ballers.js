@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../components/Button';
 
 const Wrapper = styled.View`
   flex: 1;
@@ -14,14 +13,13 @@ const Text = styled.Text`
 
 `;
 
-class Arena extends React.Component {
+class Ballers extends React.Component {
   render() {
     return (
       <Wrapper>
-        <Text>Arena</Text>
-        <Button text={"New match"} />
+        <Text>Ballers</Text>
       </Wrapper>
     );
   }
 }
-export default Arena;
+export default Ballers;

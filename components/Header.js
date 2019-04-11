@@ -38,7 +38,7 @@ class Arena extends React.Component {
 					}}
 				/>
 				<BoB source={require('../assets/BoB.png')}/>
-				<Title>Arena</Title>
+				<Title>{this.props.title}</Title>
 			</Wrapper>
 		);
 	}
