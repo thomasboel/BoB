@@ -27,8 +27,8 @@ const VersusEntry = styled.View`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  width: 100%;
+  justify-content: space-between;
+  width: ${width - 40}px;
   height: 77px;
 `;
 
@@ -36,18 +36,21 @@ const TeamScore = styled.Text`
   width: 30px;
   font-size: 16px;
   color: ${props => props.winning ? colors.yellow : colors.darkGrey};
+  text-align: ${props => props.right ? 'right' : 'left'};
 `;
 
 const TeamName = styled.Text`
   width: 110px;
   font-size: 16px;
   color: ${colors.darkGrey};
+  text-align: ${props => props.right ? 'left' : 'right'};
 `;
 
 const VS = styled.Text`
   width: 25px;
   font-size: 16px;
   font-weight: 600;
+  font-style: italic;
 `;
 
 const Seperator = styled.View`
@@ -65,24 +68,24 @@ class Arena extends React.Component {
             <TeamScore winning={true}>44</TeamScore>
             <TeamName>Børnebordet</TeamName>
             <VS>VS</VS>
-            <TeamName>Projektlederne</TeamName>
-            <TeamScore winning={false}>37</TeamScore>
+            <TeamName right>Projektlederne</TeamName>
+            <TeamScore right winning={false}>37</TeamScore>
           </VersusEntry>
           <Seperator />
           <VersusEntry>
             <TeamScore winning={false}>24</TeamScore>
             <TeamName>Børnebordet</TeamName>
             <VS>VS</VS>
-            <TeamName>Udviklerne</TeamName>
-            <TeamScore winning={true}>43</TeamScore>
+            <TeamName right>Udviklerne</TeamName>
+            <TeamScore right winning={true}>43</TeamScore>
           </VersusEntry>
           <Seperator />
           <VersusEntry>
             <TeamScore winning={true}>21</TeamScore>
             <TeamName>Projektlederne</TeamName>
             <VS>VS</VS>
-            <TeamName>Udviklerne</TeamName>
-            <TeamScore winning={false}>15</TeamScore>
+            <TeamName right>Udviklerne</TeamName>
+            <TeamScore right winning={false}>15</TeamScore>
           </VersusEntry>
           <Seperator />
         </ScrollContainer>

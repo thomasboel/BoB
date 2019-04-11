@@ -11,7 +11,7 @@ const Wrapper = styled.View`
 	margin-bottom: 20px;
   width: 66px;
   height: 12px;
-	padding-top: 15px;
+	padding-top: 25px;
 `;
 
 const Circle = styled.View`
