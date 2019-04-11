@@ -63,7 +63,7 @@ class Arena extends React.Component {
   render() {
     return (
       <Wrapper>
-        <ScrollContainer>
+        <ScrollContainer showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
           <VersusEntry>
             <TeamScore winning={true}>44</TeamScore>
             <TeamName>Børnebordet</TeamName>

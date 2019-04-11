@@ -77,7 +77,7 @@ class Ballers extends React.Component {
   render() {
     return (
       <Wrapper>
-        <ScrollContainer>
+        <ScrollContainer showsVerticalScrollIndicator={false} showsHorizontalScrollIndicator={false}>
           <UserEntryWrapper>
             <GroupOne>
               <Name>Hakim</Name>
