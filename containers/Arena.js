@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Dimensions } from 'react-native';
 import Button from '../components/Button';
 import { colors } from '../util/Theme';
+import { Platform } from 'expo-core';
 
 var width = Dimensions.get('window').width;
 
@@ -89,7 +90,7 @@ class Arena extends React.Component {
           </VersusEntry>
           <Seperator />
         </ScrollContainer>
-        <Button text={"New match"} />
+        <Button text={"New match"} marginBottom={Platform.OS === 'ios' ? "48" : "42"} />
       </Wrapper>
     );
   }

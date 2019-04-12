@@ -11,6 +11,7 @@ const ButtonContainer = styled.View`
 	height: 50px;
 	border-radius: 2px;
 	background-color: ${colors.yellow};
+	margin-bottom: ${props => props.marginBottom};
 `;
 
 const ButtonText = styled.Text`
@@ -21,7 +22,7 @@ const ButtonText = styled.Text`
 class Button extends React.Component {
 	render() {
 		return (
-				<ButtonContainer>
+				<ButtonContainer marginBottom={this.props.marginBottom}>
 					<ButtonText>{this.props.text}</ButtonText>
 				</ButtonContainer>
 		);

@@ -1,17 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../util/Theme';
+import { Platform } from 'react-native';
 
 const Wrapper = styled.View`
+	position: absolute;
+	z-index: 10;
 	align-self: center;
   display: flex;
   align-items: center;
   justify-content: space-between;
 	flex-direction: row;
-	margin-bottom: 20px;
+	top: ${Platform.OS === 'ios' ? 6 : 15};
   width: 66px;
   height: 12px;
-	padding-top: 25px;
 `;
 
 const Circle = styled.View`
