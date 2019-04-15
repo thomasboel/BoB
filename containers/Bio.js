@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { colors } from '../util/Theme';
+import { Text } from 'react-native'
 import BioHole from '../components/BioHole';
-import { Dimensions, Animated } from 'react-native';
+import { Dimensions, Animated, TouchableOpacity, Animated } from 'react-native';
+import Button from '../components/Button';
+import { animateNext, animatePrev } from '../util/PoolTable';
 
 var width = Dimensions.get('window').width;
 
@@ -29,14 +32,38 @@ const ScrollContainer = styled.ScrollView.attrs(props => ({
 const PoolTable = styled.Image`
 	position: absolute;
   z-index: 1;
-  left: ${props => 255 - (props.scrollY / 1.8)}px;
-	top: 450px;
+  left: ${props => 250 + props.poolTable.xPos}px;
+	top: ${props => 450 + props.poolTable.yPos}px;
 `;
+
+// const PoolTable = styled.Image`
+// 	position: absolute;
+//   z-index: 1;
+//   left: ${props => 255 - (props.scrollY / 1.8)}px;
+// 	top: 450px;
+// `;
 
 class Bio extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { scrollY: 0 };
+    this.state = { 
+      scrollY: 0,
+      poolTable: {
+        sequence: 0,
+        xPos: 0, 
+        yPos: 0
+      }
+     };
+     tnhis.moveAnimation = new Animated.ValueXY({ x: 250, y: 450 });
+  }
+
+  animate() {
+    Animated.spring(this.moveAnimation, {
+      toValue: {
+        x: 275, 
+        y: 450
+      }
+    }).start();
   }
 
   handleScroll(e) {
@@ -45,9 +72,12 @@ class Bio extends React.Component {
   }
 
   render() {
+    console.log(this.state.poolTable);
+    
     return (
       <Wrapper>
-        <PoolTable scrollY={this.state.scrollY} source={require('../assets/pool_table.png')} />
+        {/* <PoolTable scrollY={this.state.scrollY} source={require('../assets/pool_table.png')} /> */}
+        <PoolTable poolTable={this.state.poolTable} source={require('../assets/pool_table.png')} />
         <ScrollContainer 
           scrollEventThrottle={16}
           onScroll={Animated.event([
@@ -61,7 +91,17 @@ class Bio extends React.Component {
           <BioHole title={"Kyllingen"}/>
           <BioHole title={"Pacman"}/>
         </ScrollContainer>
-        
+        <TouchableOpacity onPress={() => {
+          this.setState({ poolTable: animateNext(this.state.poolTable) });
+          // this.animate();
+        }}>
+          <Button text={"Next"} marginBottom={"55px"}/>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          this.setState({ poolTable: animatePrev(this.state.poolTable) });
+        }}>
+          <Button text={"Prev"} marginBottom={"55px"}/>
+        </TouchableOpacity>
       </Wrapper>
     );
   }
