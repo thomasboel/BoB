@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Dimensions } from 'react-native';
+import { Dimensions, View, Text } from 'react-native';
 import { colors } from '../util/Theme';
 
 var width = Dimensions.get('window').width;
@@ -33,8 +33,6 @@ const BioParagraph = styled.Text`
 	margin-top: 13px;
 	line-height: 24px;
 `;
-
-
 
 class BioHole extends React.Component {
 	render() {

@@ -22,9 +22,9 @@ const ButtonText = styled.Text`
 class Button extends React.Component {
 	render() {
 		return (
-				<ButtonContainer marginBottom={this.props.marginBottom}>
-					<ButtonText>{this.props.text}</ButtonText>
-				</ButtonContainer>
+			<ButtonContainer marginBottom={this.props.marginBottom}>
+				<ButtonText>{this.props.text}</ButtonText>
+			</ButtonContainer>
 		);
 	}
 }

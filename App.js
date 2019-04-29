@@ -10,6 +10,7 @@ import NavigationSlider from './components/NavigationSlider';
 import { colors } from './util/Theme';
 import { Platform } from 'expo-core';
 import { red } from 'ansi-colors';
+import BioTest from './containers/BioTest';
 
 class App extends React.Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class App extends React.Component {
           <Ballers />
           <Arena />
           <Bio />
+          {/* <BioTest /> */}
         </Swiper>
         <View style={{
           position: 'absolute',
