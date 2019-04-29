@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { colors } from '../util/Theme';
 import { Text } from 'react-native'
 import BioHole from '../components/BioHole';
-import { Dimensions, Animated, TouchableOpacity, Animated } from 'react-native';
+import { Dimensions, Animated, TouchableOpacity } from 'react-native';
 import Button from '../components/Button';
 import { animateNext, animatePrev } from '../util/PoolTable';
 
